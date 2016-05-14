@@ -5,7 +5,10 @@ import org.scalatest.BeforeAndAfter
 import org.scalatest.FunSuite
 import gov.dol.restaurant.Meal
 import gov.dol.restaurant.Entry
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
 
+@RunWith(classOf[JUnitRunner])
 class TestMeal extends FunSuite with BeforeAndAfter  {
   var meal: Meal = _
 

@@ -84,10 +84,30 @@
 					<!-- If you have classpath issue like NoDefClassError,... -->
 					<!-- useManifestOnlyJar>false</useManifestOnlyJar -->
 					<includes>
+						<include>**/Test*.*</include>
 						<include>**/*Test.*</include>
 						<include>**/*Suite.*</include>
 					</includes>
 				</configuration>
+			</plugin>
+			<!-- enable scalatest -->
+			<plugin>
+				<groupId>org.scalatest</groupId>
+				<artifactId>scalatest-maven-plugin</artifactId>
+				<version>1.0</version>
+				<configuration>
+					<reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
+					<junitxml>.</junitxml>
+					<filereports>WDF TestSuite.txt</filereports>
+				</configuration>
+				<executions>
+					<execution>
+						<id>test</id>
+						<goals>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
